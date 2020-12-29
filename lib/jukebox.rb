@@ -31,12 +31,11 @@ def play(song_list)
   puts /Please enter a song name or number:/
   user_choice = gets.strip
   
-  stop = false 
-  while !stop do 
+  while !! do 
     user_choice = user_choice.to_i if user_choice.to_i != 0 
     if user_choice.class == Integer and (user_choice > 0 and user_choice <= song_list.length)
       puts "Playing #{song_list[user_choice - 1]}"
-      stop = true
+      exit 
     elsif song_list.include? user_choice
       return puts "Playing #{user_choice}"
     else 
