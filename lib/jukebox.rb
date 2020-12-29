@@ -30,9 +30,10 @@ end
 def play(song_list)
   puts /Please enter a song name or number:/
   user_choice = gets.strip
-  user_choice = user_choice.to_i if user_choice.to_i != 0 
+  
   stop = false 
   while !stop do 
+    user_choice = user_choice.to_i if user_choice.to_i != 0 
     if user_choice.class == Integer and (user_choice > 0 and user_choice <= song_list.length)
       puts "Playing #{song_list[user_choice - 1]}"
       stop = true
@@ -41,6 +42,7 @@ def play(song_list)
     else 
       puts "Invalid input, please try again"
     end
+    user_choice = gets.strip
   end
 end
 
