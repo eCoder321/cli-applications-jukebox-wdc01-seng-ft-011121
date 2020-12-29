@@ -31,7 +31,7 @@ def play(song_list)
   puts /Please enter a song name or number:/
   user_choice = gets.strip
   
-  while !!  
+  while !! do 
     user_choice = user_choice.to_i if user_choice.to_i != 0 
     if user_choice.class == Integer and (user_choice > 0 and user_choice <= song_list.length)
       puts "Playing #{song_list[user_choice - 1]}"
